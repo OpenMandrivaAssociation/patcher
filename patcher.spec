@@ -6,7 +6,6 @@ Group:		Development/Other
 Summary:    A tool for quick creation of patches against a project source tree
 Source0:    %{name}-%{version}.tar.bz2
 Url:		http://labix.org/patcher
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: python-devel
 # needed for opt-parse
 Requires:      python  
