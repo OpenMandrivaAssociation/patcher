@@ -35,6 +35,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc LICENSE README
 %_bindir/*
 %py_sitedir/%{name}/
-%py_platsitedir/*.egg-info
+%py_puresitedir/*.egg-info
 
 
