@@ -1,6 +1,6 @@
 Name:		patcher
 Version: 0.6
-Release:    %mkrel 5
+Release:    %mkrel 6
 License:	GPL
 Group:		Development/Other
 Summary:    Quick creation of patches against a project source tree
