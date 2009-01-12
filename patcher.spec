@@ -1,10 +1,11 @@
 Name:		patcher
 Version: 0.6
-Release:    %mkrel 6
-License:	GPL
+Release:    %mkrel 7
+License:	GPL v2
 Group:		Development/Other
 Summary:    Quick creation of patches against a project source tree
 Source0:    %{name}-%{version}.tar.bz2
+Patch0:     patcher-0.6-python26.patch
 Url:		http://labix.org/patcher
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: python-devel
@@ -19,6 +20,7 @@ and a working copy.
 
 %prep
 %setup -q 
+%patch0 -p0
 
 %build
 
