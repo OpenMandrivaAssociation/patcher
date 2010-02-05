@@ -1,7 +1,7 @@
 Name:		patcher
 Version: 0.6
 Release:    %mkrel 8
-License:	GPL v2
+License:	GPLv2
 Group:		Development/Other
 Summary:    Quick creation of patches against a project source tree
 Source0:    %{name}-%{version}.tar.bz2
@@ -36,7 +36,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %doc LICENSE README
 %_bindir/*
-%py_sitedir/%{name}/
+%py_puresitedir/%{name}/
 %py_puresitedir/*.egg-info
 
 
