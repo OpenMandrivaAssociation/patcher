@@ -9,8 +9,6 @@ Patch0:     patcher-0.6-python26.patch
 Url:		http://labix.org/patcher
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: python-devel
-# needed for opt-parse
-Requires:      python  
 BuildArch:  noarch 
 %description
 Patcher is a tool for quick creation of patches against a project source tree. 
@@ -28,6 +26,9 @@ and a working copy.
 rm -rf $RPM_BUILD_ROOT
 python ./setup.py install --prefix=$RPM_BUILD_ROOT/%_prefix
 find $RPM_BUILD_ROOT/%_prefix -name '*pyc' | xargs rm -Rf
+
+# remove rpmlint warning
+perl -pi -e 's|^#!/usr/bin/python.*||' $RPM_BUILD_ROOT/%py_puresitedir/%{name}/{commands,}/*py
 
 %clean
 rm -rf $RPM_BUILD_ROOT
