@@ -5,7 +5,8 @@ License:	GPLv2+
 Group:		Development/Other
 Summary:    Quick creation of patches against a project source tree
 Source0:    http://labix.org/download/patcher/%{name}-%{version}.tar.bz2
-# patch sent to upstream by mail on 12/01/2009 
+# (misc) patch sent to upstream by mail on 12/01/2009 
+# the patch silence warnings on python 2.6
 Patch0:     patcher-0.6-python26.patch
 Url:		http://labix.org/patcher
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
