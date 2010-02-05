@@ -1,6 +1,6 @@
 Name:		patcher
 Version: 0.6
-Release:    %mkrel 8
+Release:    %mkrel 9
 License:	GPLv2+
 Group:		Development/Other
 Summary:    Quick creation of patches against a project source tree
@@ -14,7 +14,7 @@ BuildRequires: python-devel
 BuildArch:  noarch 
 %description
 Patcher is a tool for quick creation of patches against a project source tree. 
-Patcher functionality ressembles a lightweight version control system.
+Patcher functionality resembles a lightweight version control system.
 It has no repository, and only controls differences between a pristine version 
 and a working copy. 
 
