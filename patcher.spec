@@ -4,7 +4,7 @@ Release:    %mkrel 8
 License:	GPLv2+
 Group:		Development/Other
 Summary:    Quick creation of patches against a project source tree
-Source0:    %{name}-%{version}.tar.bz2
+Source0:    http://labix.org/download/patcher/%{name}-%{version}.tar.bz2
 # patch sent to upstream by mail on 12/01/2009 
 Patch0:     patcher-0.6-python26.patch
 Url:		http://labix.org/patcher
