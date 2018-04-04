@@ -1,6 +1,6 @@
 Name:		patcher
 Version:	0.6
-Release:	13
+Release:	14
 License:	GPLv2+
 Group:		Development/Other
 Summary:	Quick creation of patches against a project source tree
@@ -26,11 +26,11 @@ and a working copy.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-python ./setup.py install --prefix=$RPM_BUILD_ROOT/%_prefix
+python2 ./setup.py install --prefix=$RPM_BUILD_ROOT/%_prefix
 find $RPM_BUILD_ROOT/%_prefix -name '*pyc' | xargs rm -Rf
 
 # remove rpmlint warning
-perl -pi -e 's|^#!/usr/bin/python.*||' $RPM_BUILD_ROOT/%py_puresitedir/%{name}/{commands,}/*py
+perl -pi -e 's|^#!/usr/bin/python2.*||' $RPM_BUILD_ROOT/%py2_puresitedir/%{name}/{commands,}/*py
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -39,8 +39,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %doc LICENSE README
 %_bindir/*
-%py_puresitedir/%{name}/
-%py_puresitedir/*.egg-info
+%py2_puresitedir/%{name}/
+%py2_puresitedir/*.egg-info
 
 
 
