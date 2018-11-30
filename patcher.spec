@@ -1,16 +1,21 @@
 Name:		patcher
-Version:	0.6
-Release:	14
+Version:	0.7
+Release:	1
 License:	GPLv2+
 Group:		Development/Other
 Summary:	Quick creation of patches against a project source tree
-Source0:	http://labix.org/download/patcher/%{name}-%{version}.tar.bz2
+# Old, original source up to version 0.6
+#Source0:	http://labix.org/download/patcher/%{name}-%{version}.tar.bz2
+Source0: https://github.com/solbu/patcher/archive/%{version}/%{name}-%{version}.tar.gz
 # (misc) patch sent to upstream by mail on 12/01/2009 
 # the patch silence warnings on python 2.6
-Patch0:		patcher-0.6-python26.patch
-Url:		http://labix.org/patcher
+#Patch0:		patcher-0.6-python26.patch
+# Old url.
+#Url:		http://labix.org/patcher
+Url:  https://github.com/solbu/patcher
+
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires:	python-devel
+BuildRequires:	python2-devel
 BuildArch:	noarch 
 %description
 Patcher is a tool for quick creation of patches against a project source tree. 
@@ -20,28 +25,25 @@ and a working copy.
 
 %prep
 %setup -q 
-%patch0 -p0
+#patch0 -p0
 
 %build
 
 %install
-rm -rf $RPM_BUILD_ROOT
-python2 ./setup.py install --prefix=$RPM_BUILD_ROOT/%_prefix
-find $RPM_BUILD_ROOT/%_prefix -name '*pyc' | xargs rm -Rf
+python2 ./setup.py install --prefix=%{buildroot}/%{_prefix}
+find %{buildroot}/%{_prefix} -name '*pyc' | xargs rm -Rf
+install -D ptr.1 %{buildroot}/%{_mandir}/man1/ptr.1
 
 # remove rpmlint warning
-perl -pi -e 's|^#!/usr/bin/python2.*||' $RPM_BUILD_ROOT/%py2_puresitedir/%{name}/{commands,}/*py
-
-%clean
-rm -rf $RPM_BUILD_ROOT
+perl -pi -e 's|^#!/usr/bin/python2.*||' %{buildroot}/%py2_puresitedir/%{name}/{commands,}/*py
 
 %files
-%defattr(-,root,root)
-%doc LICENSE README
-%_bindir/*
+%doc README
+%license LICENSE 
+%{_bindir}/*
+%{_mandir}/man1/ptr.1*
 %py2_puresitedir/%{name}/
 %py2_puresitedir/*.egg-info
-
 
 
 
