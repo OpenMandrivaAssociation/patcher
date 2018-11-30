@@ -1,6 +1,6 @@
 Name:		patcher
 Version:	0.7
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Development/Other
 Summary:	Quick creation of patches against a project source tree
@@ -16,6 +16,7 @@ Url:  https://github.com/solbu/patcher
 
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	python2-devel
+BuildRequires:  diffutils
 BuildArch:	noarch 
 %description
 Patcher is a tool for quick creation of patches against a project source tree. 
