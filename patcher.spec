@@ -15,7 +15,7 @@ Source0: https://github.com/solbu/patcher/archive/%{version}/%{name}-%{version}.
 Url:  https://github.com/solbu/patcher
 
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires:	python-devel
+BuildRequires:	python2-devel
 BuildArch:	noarch 
 %description
 Patcher is a tool for quick creation of patches against a project source tree. 
